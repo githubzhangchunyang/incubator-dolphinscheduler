@@ -840,10 +840,7 @@ public final class Constants {
             ExecutionStatus.WAITTING_DEPEND.ordinal()
     };
 
-    /**
-     * status
-     */
-    public static final String STATUS = "status";
+
 
     /**
      * message
@@ -978,6 +975,10 @@ public final class Constants {
      */
     public static final String PLUGIN_JAR_SUFFIX = ".jar";
 
+    /**
+     * status
+     */
+    public static final String STATUS = "status";
     public static final int NORAML_NODE_STATUS = 0;
     public static final int ABNORMAL_NODE_STATUS = 1;
 
@@ -993,6 +994,8 @@ public final class Constants {
      */
     public static final String DOLPHIN_SCHEDULER_PREFERRED_NETWORK_INTERFACE = "dolphin.scheduler.network.interface.preferred";
 
+
+    public static final String EXCEL_SUFFIX_XLS = ".xls";
 
     /**
      * datasource encryption salt
