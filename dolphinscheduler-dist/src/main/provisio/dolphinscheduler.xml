@@ -1,0 +1,83 @@
+<runtime>
+    <!-- Target -->
+    <artifactSet to="lib">
+        <exclusion>javax.servlet:servlet-api</exclusion>
+        <exclusion>org.eclipse.jetty.aggregate:jetty-all</exclusion>
+        <exclusion>org.slf4j:slf4j-log4j12</exclusion>
+        <artifact id="${project.groupId}:dolphinscheduler-server:${project.version}" />
+        <!--</artifactSet>-->
+
+        <!--<artifactSet to="lib">-->
+        <artifact id="${project.groupId}:dolphinscheduler-api:${project.version}"/>
+        <!--</artifactSet>-->
+
+        <!--<artifactSet to="lib">-->
+        <artifact id="${project.groupId}:dolphinscheduler-common:${project.version}"/>
+        <!--</artifactSet>-->
+
+        <!--<artifactSet to="lib">-->
+        <artifact id="${project.groupId}:dolphinscheduler-dao:${project.version}" />
+        <!--</artifactSet>-->
+
+        <!--<artifactSet to="lib">-->
+        <artifact id="${project.groupId}:dolphinscheduler-microbench:${project.version}" />
+        <!--</artifactSet>-->
+
+        <!--<artifactSet to="lib">-->
+        <artifact id="${project.groupId}:dolphinscheduler-remote:${project.version}" />
+        <!--</artifactSet>-->
+
+        <!--<artifactSet to="lib">-->
+        <artifact id="${project.groupId}:dolphinscheduler-service:${project.version}" />
+        <!--</artifactSet>-->
+
+        <!--<artifactSet to="lib">-->
+        <artifact id="${project.groupId}:dolphinscheduler-ui:${project.version}" />
+        <!--</artifactSet>-->
+
+        <!--<artifactSet to="lib">-->
+        <artifact id="${project.groupId}:dolphinscheduler-alert:${project.version}"/>
+    </artifactSet>
+
+    <!-- Notices -->
+    <archive name="apache-dolphinscheduler-${project.version}.tar.gz" hardLinkIncludes="**/*.jar" />
+
+    <!-- Launcher -->
+    <fileSet to="/">
+        <directory path="${basedir}/../">
+            <include>DISCLAIMER</include>
+            <include>install.sh</include>
+            <include>LICENSE</include>
+            <include>NOTICE</include>
+        </directory>
+
+    </fileSet>
+
+    <!-- Server -->
+    <artifactSet to="bin">
+        <artifact id="io.airlift:launcher:tar.gz:bin:${dep.packaging.version}">
+            <unpack />
+        </artifact>
+        <artifact id="io.airlift:launcher:tar.gz:properties:${dep.packaging.version}">
+            <unpack filter="true" />
+        </artifact>
+    </artifactSet>
+
+    <!-- Plugins -->
+    <artifactSet to="lib/plugin/alert/email">
+        <artifact id="${project.groupId}:dolphinscheduler-alert-email:zip:${project.version}">
+            <unpack />
+        </artifact>
+    </artifactSet>
+    <artifactSet to="lib/plugin/alert/dingtalk">
+        <artifact id="${project.groupId}:dolphinscheduler-alert-dingtalk:zip:${project.version}">
+            <unpack />
+        </artifact>
+    </artifactSet>
+    <artifactSet to="lib/plugin/alert/wechat">
+        <artifact id="${project.groupId}:dolphinscheduler-alert-wechat:zip:${project.version}">
+            <unpack />
+        </artifact>
+    </artifactSet>
+
+</runtime>
